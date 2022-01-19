@@ -1,16 +1,22 @@
 import Link from 'next/link'
 import { useState } from "react";
 import styles from "../styles/Layout.module.css";
-import styles2 from '../styles/Home.module.css'
+import styles2 from '../styles/Home.module.css';
+import Image from 'next/Image';
+
+
 export default function Layout({children}){
 
     const [isOpen,setIsOpen] = useState(false);
     const openMenu= ()=> setIsOpen(!isOpen);
     return <> 
-            <header className={styles2.header}>
+            <header className={styles.header}>
                 <nav className={styles.navbar}>
                     <Link href='/'>
-                     <a className={styles.navlogo}>[BrandLogo]</a>
+                        <   Image src="/LogoFunutri.svg"
+                            width={136}
+                            height={28}
+                        />
                     </Link>
                 <ul className={isOpen === false ? 
                         styles.navmenu : styles.navmenu +' '+ styles.active}>
@@ -18,21 +24,38 @@ export default function Layout({children}){
                        <Link href='/'>
                          <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
-                                    onClick={openMenu}>Home</a>
+                                    onClick={openMenu}>home</a>
                         </Link>
                     </li>
                     <li className={styles.navitem}>
                         <Link href='/about'>
                           <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
-                                    onClick={openMenu}>About</a>
+                                    onClick={openMenu}>about us</a>
                         </Link>
                     </li>
                     <li className={styles.navitem}>
                         <Link href='/contact'>
                          <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
-                                    onClick={openMenu}>Contact</a>
+                                    onClick={openMenu}>contact</a>
+                        </Link>
+                    </li>
+                    <li className={styles.navitem}>
+                        <Link href='/contact'>
+                         <a className={isOpen === false ? 
+                                    styles.navlink : styles.navlink+' '+styles.active}
+                                    onClick={openMenu}>blog</a>
+                        </Link>
+                    </li>
+                    <li className={ isOpen===false ? styles.navliaccount: styles.navlink+' '+styles.active}>
+                        <Link href='/contact'>
+                            <button style={{marginRight:'0.5em',}}>account</button>
+                        </Link>
+                    </li>
+                    <li className={ isOpen===false ? styles.navlishop : styles.navlink+' '+styles.active}>
+                        <Link href='/contact'>
+                            <button>shop now</button>
                         </Link>
                     </li>
                 </ul>
@@ -40,6 +63,7 @@ export default function Layout({children}){
                                     styles.hamburger : styles.hamburger+' '+styles.active}
                                     onClick={openMenu}
                                     >
+                    <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
