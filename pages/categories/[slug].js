@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function Category( {products} ){
 
@@ -10,6 +11,7 @@ export default function Category( {products} ){
     return (
         <div>
           <Navbar/>
+          <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />  
 
           <div className="post-page-container blog-page-container category-page-container">
 

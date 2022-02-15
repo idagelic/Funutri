@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import Sidebar from "../components/Sidebar/Sidebar";
 
 import blogImg from '../public/assets/images/blog.png'
 
@@ -9,6 +10,7 @@ export default function Blog( {posts} ){
   return(
     <div>
     <Navbar/>
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
 
       <div className="hero-image-container blog-hero-image-container">
           <img src={blogImg} />

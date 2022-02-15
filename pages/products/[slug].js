@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function Product( {product, addToCart} ){
 
@@ -11,6 +12,7 @@ export default function Product( {product, addToCart} ){
     return (
         <div>            
             <Navbar/>
+            <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
 
             <div className="post-page-container product-page-container">
 

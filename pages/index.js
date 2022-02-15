@@ -7,6 +7,7 @@ import Testimonials from '../components/Testimonials/Testimonials';
 import PopularProducts from '../components/PopularProducts/PopularProducts';
 import Newsletter from '../components/Newsletter/Newsletter';
 import Footer from '../components/Footer/Footer';
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Home( {products} ){
 
@@ -25,6 +26,7 @@ export default function Home( {products} ){
   return (
     <div>
       <Navbar cartUpdate={cartUpdate} cartRefresh={cartRefresh}/>
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
       <HomeHero/>
       <Ingredients/>
       <PopularProducts products={products.edges} addToCart={addToCart}/>

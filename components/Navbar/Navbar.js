@@ -143,9 +143,7 @@ const Navbar = (props) => {
                                 <div className="cart-heading">
                                     cart
                                 </div>
-                                <div className="cart-empty">
-                                    {cartItems.length == 0 ? "The cart is empty." : ""}
-                                </div>
+                                {cartItems.length == 0 ? <div className="cart-empty"> The cart is empty. </div> : ""}
                                 {cartItems.map((item, index) => (
                                     <div className={`cart-item ${index % 2 == 1 ? "cart-item-dark" : "cart-item-light"}`} key={item.id + index}>
                                         <div className="cart-img">
@@ -158,7 +156,7 @@ const Navbar = (props) => {
                                             
                                         </div>
                                         <div className="cart-item-price">
-                                            € {item.price}
+                                            {item.price}
                                         </div>   
                                         <div className="cart-item-delete" onClick={() => cartRemoveItem(item.id)}>
                                             ×
@@ -167,7 +165,7 @@ const Navbar = (props) => {
                                 ))}
                                 <div className="cart-footer">
                                     <div className="cart-total">
-                                        total: 1234
+                                        total: €{cartItems.map(item => item.price.split('.')[0].replace(/[^0-9]/g, '')).reduce((prev, curr) => parseFloat(prev) + parseFloat(curr), 0)}
                                     </div>
                                     <div className="cart-checkout-button">
                                         <a href={`https://funutri-api.manistrausuvo.com/checkout`}>

@@ -8,12 +8,14 @@ import aboutUs1 from '../public/assets/images/about-us-1.png'
 import aboutUs2 from '../public/assets/images/about-us-2.png'
 import aboutUs3 from '../public/assets/images/about-us-3.png'
 import aboutUs4 from '../public/assets/images/about-us-4.png'
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function AboutUs(){
 
   return (
     <div>
       <Navbar/>
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
 
       <div className="hero-image-container about-us-hero-image-container">
           <img src={aboutUs} />

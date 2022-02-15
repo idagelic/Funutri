@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function Post( data ){
 
@@ -10,6 +11,7 @@ export default function Post( data ){
     return (
         <div>
             <Navbar/>
+            <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
 
             <div className="hero-image-container">
                 <img src={post.featuredImage?.node?.sourceUrl} />
@@ -77,7 +79,7 @@ export async function getStaticPaths() {
         body: JSON.stringify({
             query: `
             query AllPostsQuery {
-                posts {
+                posts (first: 500) {
                     nodes {
                         slug
                         content

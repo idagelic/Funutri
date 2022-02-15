@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Shop( {productCategories} ){
 
@@ -12,6 +13,7 @@ export default function Shop( {productCategories} ){
   return(
     <div>
       <Navbar/>
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"Home"} />
 
       <div className="box shop-container">
           <div className="tile">
