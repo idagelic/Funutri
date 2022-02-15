@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 export default function Category( {products} ){
 
@@ -7,18 +9,47 @@ export default function Category( {products} ){
 
     return (
         <div>
-            Woo.
+          <Navbar/>
+
+          <div className="post-page-container blog-page-container category-page-container">
+
+          <div className="box post-page-content about-us-page-content">
+            <div className="tile">
+                  <div className="heading shop-heading">
+                    funutri {products[0].node.productCategories.nodes[0].slug}
+                  </div>
+                  <div className="heading shop-subheading">
+                    naturally extracted, FDA approved
+                  </div>
+            </div>
+            <div className="blog-posts">
+            
             {products.map(product => {
                 return (
-                <div>
-                    <h1>{product?.node.name}</h1>
-                    {product?.node.image?.sourceUrl ? (
-                        <img src={product?.node.image?.sourceUrl} width="640" height="426"/>
-                    ) : null}
-                    <article dangerouslySetInnerHTML={{__html: product?.node.content}}></article>
-                </div>
+                  <a href={`/products/${product.node.slug}`} key={product.node.slug}>
+                  <div className="blog-post tile">
+                    <div className="col-lg-10 offset-lg-1">
+                      <div className="blog-post-image">
+                        {product.node.image.sourceUrl ? <img src={product.node.image.sourceUrl} /> : ""}
+                      </div>
+                      <div className="blog-post-title">
+                        {product.node.name} <br/>
+                        <div class="product-grid-price">{product.node.price}</div>
+                      </div>
+
+                      {/* <div className="blog-post-content" dangerouslySetInnerHTML={{__html: (post.content?.slice(0, 400) + "...")}}></div> */}
+                    </div>
+                  </div>
+                  </a>
                 )
             })}
+
+            </div>
+            </div>
+
+          </div>
+
+          <Footer/>
         </div>
     )
 

@@ -12,75 +12,99 @@ const Testimonials = () => {
     }, []);
 
     return (
-        <div class="testimonial-container">
-            <div class="box">
-                <div class="tile">
-                    <div class="heading">
+        <div className="testimonial-container">
+            <div className="box">
+                <div className="tile">
+                    <div className="heading">
                         our satisfied partners
                     </div>
                 </div>       
             </div>
 
-            <div class="tile">
+            <div className="tile">
 
-                <div class="col-lg-6">
-                    <div class="testimonial-image">
+                <div className="col-lg-6">
+                    <div className="testimonial-image">
                          <img src={testimonial1}/> 
                     </div>
-                    <div class="testimonial-overlay"></div>
+                    <div className="testimonial-overlay"></div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-content testimonial-content-right">
-                        <div class="testimonial-name">
-                            Lorem ipsum, Lorem ipsum d.o.o.
+                <div className="col-lg-6">
+                    <div className="testimonial-content testimonial-content-right">
+                        <div className="testimonial-name">
+                            John Smith, Adriatic d.o.o.
                         </div>
-                        <div class="testimonial-position">
+                        <div className="testimonial-position">
                             Chief Executive Officer
                         </div>
-                        <div class="testimonial-quote">
+                        <div className="testimonial-quote">
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-content">
-                        Test test test
+                <div className="col-lg-6">
+                    <div className="testimonial-content testimonial-content-left">
+                        <div className="testimonial-name">
+                            John Smith, Adriatic d.o.o.
+                        </div>
+                        <div className="testimonial-position">
+                            Chief Executive Officer
+                        </div>
+                        <div className="testimonial-quote">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-image">
+                <div className="col-lg-6">
+                    <div className="testimonial-image">
                          <img src={testimonial2}/>
                     </div>
-                    <div class="testimonial-overlay"></div>
+                    <div className="testimonial-overlay"></div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-image">
+                <div className="col-lg-6">
+                    <div className="testimonial-image">
                         <img src={testimonial3}/>
                     </div>
-                    <div class="testimonial-overlay"></div>
+                    <div className="testimonial-overlay"></div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-content">
-                        Test test test
+                <div className="col-lg-6">
+                    <div className="testimonial-content testimonial-content-right">
+                        <div className="testimonial-name">
+                            John Smith, Adriatic d.o.o.
+                        </div>
+                        <div className="testimonial-position">
+                            Chief Executive Officer
+                        </div>
+                        <div className="testimonial-quote">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-content">
-                        Test test test
+                <div className="col-lg-6">
+                    <div className="testimonial-content testimonial-content-left">
+                        <div className="testimonial-name">
+                            John Smith, Adriatic d.o.o.
+                        </div>
+                        <div className="testimonial-position">
+                            Chief Executive Officer
+                        </div>
+                        <div className="testimonial-quote">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="testimonial-image">
+                <div className="col-lg-6">
+                    <div className="testimonial-image">
                         <img src={testimonial4}/>
                     </div>
-                    <div class="testimonial-overlay"></div>
+                    <div className="testimonial-overlay"></div>
                 </div>
 
             </div>     

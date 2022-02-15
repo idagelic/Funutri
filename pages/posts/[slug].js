@@ -11,23 +11,13 @@ export default function Post( data ){
         <div>
             <Navbar/>
 
-            <div class="hero-image-container">
+            <div className="hero-image-container">
                 <img src={post.featuredImage?.node?.sourceUrl} />
             </div>
 
-            <div class="post-page-container">
+            <div className="post-page-container">
 
-                <div class="box post-page-content">
-                    <div class="tile">
-                        {/* <div class="col-lg-12 post-page-header">
-                            <div class="heading post-page-heading">
-                            shop
-                            </div>
-                            <div class="heading post-page-subheading">
-                            pick a category
-                            </div>
-                        </div> */}
-                    </div>
+                <div className="box post-page-content">
 
                 <h1>{post.title}</h1>
                 <div dangerouslySetInnerHTML={{__html: post.content}}></div>

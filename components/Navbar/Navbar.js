@@ -17,11 +17,6 @@ const menuItemsList = [
         isClicked: false
     },
     {
-        name: 'contact',
-        slug: 'contact',
-        isClicked: false
-    },
-    {
         name: 'faq',
         slug: 'faq',
         isClicked: false
@@ -101,18 +96,6 @@ const Navbar = (props) => {
 
     }, [cartItems]);
 
-    function addToCart() {
-
-        setTest123(JSON.parse(localStorage.getItem('test123')) || []);
-
-        console.log(localStorage.getItem('test123'));
-
-        setTest123(test123 => [...test123, 10]);
-
-        localStorage.setItem('test123', JSON.stringify(test123));
-        console.log(test123);
-    }
-
     function toggleCartModal() {
         setIsCartOpen(!isCartOpen);
     }
@@ -126,76 +109,76 @@ const Navbar = (props) => {
 
     return (
         <header>
-            <nav class="navbar sticky-nav">
-                <div class="box navbar-content">
-                    <div class="logo">
+            <nav className="navbar sticky-nav">
+                <div className="box navbar-content">
+                    <div className="logo">
                         <a href="/">
                             <img src={logoSrc}/>
                         </a>
                     </div>
 
-                    <ul class="menu-items">
+                    <ul className="menu-items">
                         {menuItems.map((item) => (
-                            <a href={item.slug}><li className={`menu-item ${item.isClicked ? "menu-item-clicked" : ""}`}>{item.name}</li></a>
+                            <a href={item.slug} key={item.slug + item.name}><li className={`menu-item ${item.isClicked ? "menu-item-clicked" : ""}`}>{item.name}</li></a>
                         ))}
                     </ul>
 
-                    <div class="buttons-container">
+                    <div className="buttons-container">
 
                         <a href="/account">
-                            <button class="button-empty">
+                            <button className="button-empty">
                                 <span> account </span>
                             </button>
                         </a>
 
                         <a href="/shop">
-                            <button class="button-full">
+                            <button className="button-full">
                                 <span> shop now </span>
                             </button>
                         </a>
 
-                        <button class="navbar-cart" >
+                        <div className="navbar-cart">
                             <img src={cartItems.length > 0 ? cartFullSrc : cartEmptySrc} onClick={toggleCartModal}/>
                             <div className={`cart-modal ${isCartOpen ? "cart-modal-open" : ""}`}>
-                                <div class="cart-heading">
+                                <div className="cart-heading">
                                     cart
                                 </div>
-                                <div class="cart-empty">
+                                <div className="cart-empty">
                                     {cartItems.length == 0 ? "The cart is empty." : ""}
                                 </div>
                                 {cartItems.map((item, index) => (
-                                    <div className={`cart-item ${index % 2 == 1 ? "cart-item-dark" : "cart-item-light"}`}>
-                                        <div class="cart-img">
+                                    <div className={`cart-item ${index % 2 == 1 ? "cart-item-dark" : "cart-item-light"}`} key={item.id + index}>
+                                        <div className="cart-img">
                                             <img src={item.sourceUrl} />
                                         </div>
-                                        <div class="cart-item-name">
+                                        <div className="cart-item-name">
                                             {item.name.length < 20 ? item.name : item.name.slice(0,18) + "..."}
                                         </div>   
-                                        <div class="cart-item-spacer">
+                                        <div className="cart-item-spacer">
                                             
                                         </div>
-                                        <div class="cart-item-price">
+                                        <div className="cart-item-price">
                                             € {item.price}
                                         </div>   
-                                        <div class="cart-item-delete" onClick={() => cartRemoveItem(item.id)}>
+                                        <div className="cart-item-delete" onClick={() => cartRemoveItem(item.id)}>
                                             ×
                                         </div>        
                                     </div>
                                 ))}
-                                <div class="cart-footer">
-                                    <div class="cart-total">
+                                <div className="cart-footer">
+                                    <div className="cart-total">
                                         total: 1234
                                     </div>
-                                    <div class="cart-checkout-button">
+                                    <div className="cart-checkout-button">
                                         <a href={`https://funutri-api.manistrausuvo.com/checkout`}>
-                                            <button class="button-empty">
+                                            <button className="button-empty">
                                                 <span> checkout </span>
                                             </button>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </button>
+                        </div>
 
                     </div>
 

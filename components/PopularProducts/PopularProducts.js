@@ -14,45 +14,46 @@ const PopularProducts = ({products, addToCart}) => {
     }, []);
 
     return (
-        <div class="products-container">
-        <div class="box">
-            <div class="tile">
-                <div class="heading">
+        <div className="products-container">
+        <div className="box">
+            <div className="tile">
+                <div className="heading">
                     most popular products
                 </div>
             </div>
-            <div class="tile">
+            <div className="tile">
 
                 {
                 productsList.map(product => {
 
                     return(
 
-                        <div class="col-lg-4 product-container" key={product.node.slug}>
+                        <div className="col-lg-4 product-container" key={product.node.slug}>
 
                             <a href={`/products/${product.node.slug}`}>
-                                <div class="product-image"> 
+                                <div className="product-image"> 
                                     <img src={product.node.image.sourceUrl}/> 
                                 </div>
-                                <div class="product-name">
+                                <div className="product-name">
                                     {product.node.name}
                                 </div>
-                                <div class="product-description" dangerouslySetInnerHTML={{ __html: product.node.shortDescription }} >
-                                </div>
-                                <div class="product-price">
-                                    {product.node.price}
+                                <div className="product-description" dangerouslySetInnerHTML={{ __html: product.node.shortDescription }} >
                                 </div>
                             </a>
 
-                            <div class="product-spacer">
+                            <div className="product-spacer">
+                            </div>
+                            
+                            <div className="product-price">
+                                {product.node.price}
                             </div>
 
-                            <div class="product-actions">
-                                <button class="button-empty" onClick={() => addToCart(product)}>
+                            <div className="product-actions">
+                                <button className="button-empty" onClick={() => addToCart(product)}>
                                     <span> add to cart </span>
                                 </button>
 
-                                <button class="button-full">
+                                <button className="button-full">
                                     <span> buy now </span>
                                 </button>
                             </div>

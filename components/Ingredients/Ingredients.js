@@ -12,40 +12,40 @@ const Ingredients = () => {
     }, []);
 
     return (
-        <div class="ingredients-container">
-        <div class="box">
-            <div class="tile">
-                <div class="heading">
+        <div className="ingredients-container">
+        <div className="box">
+            <div className="tile">
+                <div className="heading">
                     the magical ingredients
                 </div>
             </div>
-            <div class="tile">
+            <div className="tile">
 
-                <div class="col-lg-3 ingredient-container">
+                <div className="col-lg-3 ingredient-container">
                     <a href="/posts/cordyceps">
-                        <div class="ingredient-image"> <img src={cordyceps}/> </div>   
-                        <div class="ingredient-name"> cordyceps </div>
+                        <div className="ingredient-image"> <img src={cordyceps}/> </div>   
+                        <div className="ingredient-name"> cordyceps </div>
                     </a>
                 </div>
 
-                <div class="col-lg-3 ingredient-container">
+                <div className="col-lg-3 ingredient-container">
                     <a href="/posts/lions-mane">
-                        <div class="ingredient-image"> <img src={lionsMane}/> </div>
-                        <div class="ingredient-name"> lion's mane </div>
+                        <div className="ingredient-image"> <img src={lionsMane}/> </div>
+                        <div className="ingredient-name"> lion's mane </div>
                     </a>
                 </div>
 
-                <div class="col-lg-3 ingredient-container">
+                <div className="col-lg-3 ingredient-container">
                     <a href="/posts/chaga">
-                        <div class="ingredient-image"> <img src={chaga}/> </div>
-                        <div class="ingredient-name"> chaga </div>   
+                        <div className="ingredient-image"> <img src={chaga}/> </div>
+                        <div className="ingredient-name"> chaga </div>   
                     </a>
                 </div>
 
-                <div class="col-lg-3 ingredient-container">
+                <div className="col-lg-3 ingredient-container">
                     <a href="/posts/chanterelle">
-                        <div class="ingredient-image"> <img src={chanterelle}/> </div>
-                        <div class="ingredient-name"> chanterelle </div>
+                        <div className="ingredient-image"> <img src={chanterelle}/> </div>
+                        <div className="ingredient-name"> chanterelle </div>
                     </a>
                 </div>
 

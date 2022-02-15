@@ -12,21 +12,21 @@ const Newsletter = () => {
     }, []);
 
     return (
-        <div class="newsletter">
-            <div class="newsletter-text heading">
+        <div className="newsletter">
+            <div className="newsletter-text heading">
                 join our newsletter and get 15% off first purchase
             </div>
 
-            <div class="buttons-container">
+            <div className="buttons-container">
 
                 <a href="/account">
-                    <button class="button-full">
+                    <button className="button-full">
                         <span> join today </span>
                     </button>
                 </a>
 
                 <a href="mailto:test@gmail.com">
-                    <button class="button-empty">
+                    <button className="button-empty">
                         <span> contact us </span>
                     </button>
                 </a>

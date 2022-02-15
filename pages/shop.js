@@ -13,28 +13,28 @@ export default function Shop( {productCategories} ){
     <div>
       <Navbar/>
 
-      <div class="box shop-container">
-          <div class="tile">
-            <div class="col-lg-12 shop-header">
-              <div class="heading shop-heading">
+      <div className="box shop-container">
+          <div className="tile">
+            <div className="col-lg-12 shop-header">
+              <div className="heading shop-heading">
                 shop
               </div>
-              <div class="heading shop-subheading">
+              <div className="heading shop-subheading">
                 pick a category
               </div>
             </div>
           </div>
-          <div class="tile categories-grid">
+          <div className="tile categories-grid">
             {
               productCategories.map(category => {
                 return (
-                  <div class="category-item col-lg-6" key={category.node.slug}>
+                  <div className="category-item col-lg-6" key={category.node.slug}>
                     
                     <a href={`/categories/${category.node.slug}`}>
-                      <div class="category-image-container">
+                      <div className="category-image-container">
                         <img src={category.node.image.sourceUrl} />
                       </div>
-                      <div class="category-name">
+                      <div className="category-name">
                         {category.node.name}
                       </div>
                     </a>
