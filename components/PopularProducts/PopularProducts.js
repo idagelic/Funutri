@@ -53,9 +53,11 @@ const PopularProducts = ({products, addToCart}) => {
                                     <span> add to cart </span>
                                 </button>
 
-                                <button className="button-full">
-                                    <span> buy now </span>
-                                </button>
+                                <a href="https://funutri-api.manistrausuvo.com/checkout/">
+                                    <button className="button-full">
+                                        <span> buy now </span>
+                                    </button>
+                                </a>
                             </div>
 
                         </div>

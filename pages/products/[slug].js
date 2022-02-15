@@ -45,9 +45,11 @@ export default function Product( {product, addToCart} ){
                                         <span> add to cart </span>
                                     </button>
 
-                                    <button className="button-full">
-                                        <span> buy now </span>
-                                    </button>
+                                    <a href="https://funutri-api.manistrausuvo.com/checkout/">
+                                        <button className="button-full">
+                                            <span> buy now </span>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
 
@@ -72,43 +74,47 @@ export async function getStaticProps(context) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             query: `
-            query ($first: Int, $after: String) {
-                products(first: $first, after: $after, where: {supportedTypesOnly: true}) {
-                  edges {
-                    cursor
-                    node {
+            query {
+              products(first: 500, where: {supportedTypesOnly: true}) {
+                edges {
+                  cursor
+                  node {
+                    id
+                    slug
+                    name
+                    type
+                    shortDescription
+                    image {
                       id
-                      slug
-                      name
-                      type
-                      shortDescription
-                      image {
+                      sourceUrl
+                      altText
+                    }
+                    galleryImages {
+                      nodes {
                         id
                         sourceUrl
                         altText
                       }
-                      galleryImages {
-                        nodes {
-                          id
-                          sourceUrl
-                          altText
-                        }
-                      }
-                      ... on SimpleProduct {
-                        onSale
-                        price
-                        regularPrice
-                        description
-                      }
-                      ... on VariableProduct {
-                        onSale
-                        price
-                        regularPrice
+                    }
+                    ... on SimpleProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    ... on VariableProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    productCategories {
+                      nodes {
+                        slug
                       }
                     }
                   }
                 }
               }
+            }
             `
         })
     })
@@ -135,43 +141,47 @@ export async function getStaticPaths() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             query: `
-            query ($first: Int, $after: String) {
-                products(first: $first, after: $after, where: {supportedTypesOnly: true}) {
-                  edges {
-                    cursor
-                    node {
+            query {
+              products(first: 500, where: {supportedTypesOnly: true}) {
+                edges {
+                  cursor
+                  node {
+                    id
+                    slug
+                    name
+                    type
+                    shortDescription
+                    image {
                       id
-                      slug
-                      name
-                      type
-                      shortDescription
-                      image {
+                      sourceUrl
+                      altText
+                    }
+                    galleryImages {
+                      nodes {
                         id
                         sourceUrl
                         altText
                       }
-                      galleryImages {
-                        nodes {
-                          id
-                          sourceUrl
-                          altText
-                        }
-                      }
-                      ... on SimpleProduct {
-                        onSale
-                        price
-                        regularPrice
-                        description
-                      }
-                      ... on VariableProduct {
-                        onSale
-                        price
-                        regularPrice
+                    }
+                    ... on SimpleProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    ... on VariableProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    productCategories {
+                      nodes {
+                        slug
                       }
                     }
                   }
                 }
               }
+            }
         `})
     })
 

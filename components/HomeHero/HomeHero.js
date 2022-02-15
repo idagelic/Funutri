@@ -22,11 +22,11 @@ const HomeHero = () => {
                         the best investment you can ever make is in your own health
                     </div>
                     <div className="home-hero-button-container">
-                            {/* <a href="/shop"> */}
+                            <a href="/shop">
                                 <button className="button-full">
                                     <span> shop now </span>
                                 </button>
-                            {/* </a> */}
+                            </a>
                     </div>
                 </div>
             </div>

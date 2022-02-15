@@ -64,47 +64,47 @@ export async function getStaticProps(context) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             query: `
-            query ($first: Int, $after: String) {
-                products(first: $first, after: $after, where: {supportedTypesOnly: true}) {
-                  edges {
-                    cursor
-                    node {
+            query {
+              products(first: 500, where: {supportedTypesOnly: true}) {
+                edges {
+                  cursor
+                  node {
+                    id
+                    slug
+                    name
+                    type
+                    shortDescription
+                    image {
                       id
-                      slug
-                      name
-                      type
-                      shortDescription
-                      image {
+                      sourceUrl
+                      altText
+                    }
+                    galleryImages {
+                      nodes {
                         id
                         sourceUrl
                         altText
                       }
-                      galleryImages {
-                        nodes {
-                          id
-                          sourceUrl
-                          altText
-                        }
-                      }
-                      ... on SimpleProduct {
-                        onSale
-                        price
-                        regularPrice
-                      }
-                      ... on VariableProduct {
-                        onSale
-                        price
-                        regularPrice
-                      }
-                      productCategories {
-                        nodes {
-                          slug
-                        }
+                    }
+                    ... on SimpleProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    ... on VariableProduct {
+                      onSale
+                      price
+                      regularPrice
+                    }
+                    productCategories {
+                      nodes {
+                        slug
                       }
                     }
                   }
                 }
               }
+            }
             `
         })
     })

@@ -99,6 +99,7 @@ button, input[type="submit"], input[type="reset"] {
   height: 32px;
   width: 32px;
   margin-top: 4px;
+  cursor: pointer;
 }
 
 .navbar-content {
@@ -228,6 +229,7 @@ button, input[type="submit"], input[type="reset"] {
   width: fit-content;
   margin-left: 12px;
   margin-right: 12px;
+  cursor: pointer;
 }
 
 .cart-item-spacer {
